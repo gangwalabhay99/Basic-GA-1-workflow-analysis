@@ -1,7 +1,7 @@
 name: node
 on: push
 jobs:
-  first-job:
+  test-job:
     runs-on: ubuntu-latest
     steps:
       - name: read directory
@@ -17,3 +17,23 @@ jobs:
 
       - name: test
         run: npm test
+
+  deploy-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: read directory
+        uses: actions/checkout@v3
+
+      - name: install node js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: install dependencies packages
+        run: npm install
+
+      - name: build packages
+        run: npm run build
+
+      - name: package deploy
+        run: echo "deploying......"
