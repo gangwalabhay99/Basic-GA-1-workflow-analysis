@@ -1,7 +1,7 @@
 name: node
 on: push
 jobs:
-  job1:
+  first-job:
     runs-on: ubuntu-latest
     steps:
       
