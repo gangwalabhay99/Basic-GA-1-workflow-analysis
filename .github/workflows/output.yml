@@ -10,4 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: workflow information
-        run: echo "${{toJSON(github)}}"
+        run: |
+          echo "${{toJSON(github)}}"
+          echo  "my name is lakhan"
